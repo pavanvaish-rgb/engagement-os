@@ -18,27 +18,28 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* DESIGN.md tokens — Figma design system */
-      --color-primary:          #000000;
-      --color-primary-hover:    #333333;
-      --color-primary-muted:    #f7f7f5;
-      --color-accent:           #ff3d8b;
-      --color-accent-muted:     #fff0f7;
-      --color-canvas:           #ffffff;
-      --color-surface:          #f7f7f5;
-      --color-surface-elevated: #f1f1f1;
-      --color-hairline:         #e6e6e6;
-      --color-hairline-strong:  #d0d0d0;
-      --color-text:             #000000;
-      --color-text-muted:       #666666;
-      --color-text-faint:       #999999;
+      /* Indian tricolour theme — saffron / white / green / Ashoka navy */
+      --color-primary:          #FF9933;
+      --color-primary-hover:    #e6801a;
+      --color-primary-muted:    #fff5e6;
+      --color-accent:           #138808;
+      --color-accent-muted:     #e8f5e9;
+      --color-canvas:           #fffdf8;
+      --color-surface:          #fff8ee;
+      --color-surface-elevated: #ffefd6;
+      --color-hairline:         #ffe0b2;
+      --color-hairline-strong:  #ffb74d;
+      --color-text:             #1a1200;
+      --color-text-muted:       #5a3e00;
+      --color-text-faint:       #9e7b3a;
       --color-on-primary:       #ffffff;
-      --color-status-green:     #1ea64a;
-      --color-status-green-bg:  #e6f7ec;
-      --color-status-amber:     #c47d00;
-      --color-status-amber-bg:  #fff8e6;
-      --color-status-red:       #e5484d;
-      --color-status-red-bg:    #fff0f0;
+      --color-status-green:     #138808;
+      --color-status-green-bg:  #e8f5e9;
+      --color-status-amber:     #FF9933;
+      --color-status-amber-bg:  #fff5e6;
+      --color-status-red:       #c62828;
+      --color-status-red-bg:    #ffebee;
+      --color-chakra:           #000080;
       --font-sans:   'Inter', system-ui, sans-serif;
       --font-mono:   'JetBrains Mono', monospace;
       --radius-xs:   2px;
@@ -63,14 +64,20 @@
     #sidebar {
       width: 220px;
       min-width: 220px;
-      background: var(--color-canvas);
-      border-right: 1px solid var(--color-hairline);
+      background: linear-gradient(180deg, #fff5e6 0%, #fffdf8 20%, #fffdf8 80%, #e8f5e9 100%);
+      border-right: 3px solid var(--color-primary);
       display: flex;
       flex-direction: column;
       height: 100vh;
       position: fixed;
       left: 0; top: 0;
       z-index: 10;
+    }
+
+    .tricolour-stripe {
+      height: 6px;
+      background: linear-gradient(to bottom, #FF9933 0%, #FF9933 33.3%, #ffffff 33.3%, #ffffff 66.6%, #138808 66.6%, #138808 100%);
+      flex-shrink: 0;
     }
 
     #sidebar-logo {
@@ -150,6 +157,9 @@
       flex: 1;
       height: 100vh;
       overflow-y: auto;
+      background:
+        radial-gradient(circle 260px at 70% 45%, rgba(0,0,128,0.04) 0%, transparent 70%),
+        linear-gradient(to bottom right, #fff8ee 0%, #fffdf8 50%, #f0faf0 100%);
     }
 
     .tab-pane { display: none; padding: 28px 32px; min-height: 100%; }
@@ -808,6 +818,7 @@
 
 <!-- SIDEBAR -->
 <aside id="sidebar">
+  <div class="tricolour-stripe"></div>
   <div id="sidebar-logo">
     <div class="wordmark">Meridian Advisory</div>
     <div class="submark">Engagement OS</div>
@@ -867,6 +878,7 @@
 
 <!-- MAIN -->
 <main id="main">
+  <div class="tricolour-stripe"></div>
 
   <!-- TAB: PIPELINE -->
   <div class="tab-pane active" id="tab-pipeline">
